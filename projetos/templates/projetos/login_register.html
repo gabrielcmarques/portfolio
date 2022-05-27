@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<!-- url.com/registro/ -->
+<main class="formPage my-xl">
+    <div class="auth">
+        <div class="card">
+            <div class="auth__header text-center">            
+                <h3>Crie a sua conta</h3>
+                <p>Crie uma conta para acessar as funcionalidades do nosso website</p>
+                
+            </div>
+            <p>(<b>Use o seu email para receber boas vindas do meu Bot de email!</b> Por questão de
+                demonstração rápida use a senha como no label abaixo. Não vai cadastrar nada aqui.)</p>
+            <form method="POST" action="" class="form auth__form">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="form__field">
+                    
+                    <label for="formInput#text"><b>{{field.label}}</b></label>
+                    {{field}}                
+    
+                    <!-- {% if field.help_text %} 
+                    <small>{{field.help_text}}</small>
+                    {% endif %} -->
+    
+                    {% for error in field.errors %}
+                    <p style="color: red;">{{error}}</p>
+                    {% endfor %}
+                </div>
+                
+                {% endfor %}
+                <div class="auth__actions">
+                    <input class="btn btn--sub btn--lg" type="submit" value="Cadastrar" />
+                </div>
+            </form>
+            <div class="auth__alternative">
+                <p>Já possuí uma conta?</p>
+                <a href="{% url 'loginUsuario' %}">Login</a>
+            </div>
+        </div>
+    </div>
+    </main>
+{% endblock %}

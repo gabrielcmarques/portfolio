@@ -1,0 +1,15 @@
+{% load static %}
+<!-- Header Section -->
+<header class="header">
+    <div class="container container--narrow">
+        <a href="{% url 'homepage' %}" class="header__logo">
+            <h2 style="color: white ;">PORTFOLIO GABRIEL C. MARQUES</h2>
+        </a>
+        <nav class="header__nav">
+            <ul>
+                <h4 class="header__menuItem"><a href="{% url 'projetosHome' %}">Projetos</a></h4>
+                <h4 class="header__menuItem"><a href="{% url 'sobre' %}">Contato & Sobre</a></h4>
+            </ul>            
+        </nav>
+    </div>
+</header>

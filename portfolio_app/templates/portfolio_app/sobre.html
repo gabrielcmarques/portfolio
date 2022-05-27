@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<main class="auth">
+    <section class="auth__header" style="padding-bottom: 15%; ">    
+        <div class="card" style="width: 1200px;">
+        <h2 style="margin-left: 2% ;"><u>Informação sobre esse website:</h2></u>
+
+        <h6 style="margin-left: 2%">Criei esse website com meus conhecmentos em Python Django e
+            conhecimentos básicos com HTML e CSS. Os Template HTML e CSS foram reaproveitados
+            das aulas que tive nesses últimos meses, apenas para dar um estilo básico para
+            o website. Sou um developer especializado em Back-end com foco em modelagem de 
+            banco de dados, APIs e funcionalidades. O meu objetivo com esse website é demonstrar
+             as funcionalidades e conhecimentos que obtive nesses anos. 😄</h6>
+        
+        <h2 style="margin-left: 2%; margin-top: 2% ;"><u>Contato:</h2></u>
+        <!-- <h2 style="margin-top: 5% ;"><u>Contato:</h2>:</u></h2>  -->   
+        
+        <h6 style="margin-left: 2% ;">Email: <a href="https://mail.google.com/mail/u/0/#inbox?compose=new"
+                target="_blank"><u>gabrielchristomarques@gmail.com</u></a></h6> 
+                
+        <h6 style="margin-left: 2% ;">Linkedin: <a href="https://www.linkedin.com/in/gabriel-christo-marques/" target="_blank"><u>Gabriel C.
+                    Marques</u></a></h6>
+
+        <form class="form" method="POST" action="#" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div style="margin-left: 2% ; margin-top: 2%;">
+                <input class="btn btn--sub btn" type="submit" value="Voltar" />
+            </div>
+        </form>
+        </div>
+        
+    </section>
+</main>
+{% endblock %}
+
+

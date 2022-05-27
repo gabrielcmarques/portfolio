@@ -1,0 +1,76 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<!-- url.com/projetos/ -->
+<!-- Main Section -->
+<main class="projects">
+
+    <section  class="projectsList">
+
+        {% if request.user.is_authenticated %}
+        <div style="text-align:right ; margin-right: 15%;">
+            <a class="btn btn--sub" href="{% url 'criar-projeto' %}"><b>+</b> Criar Novo Post</a>
+        </div>
+        {% endif %}
+
+        <div class=" container container--narrow">
+            <div class="hero-section__box">
+                <h2 style="text-align: center; color: aliceblue;"><u>Conheça os meus projetos:</u></h2>
+            </div>
+        </div>
+
+        <div class="hero-section__search">
+            <form id='searchForm' class="form" action="#" method="get">
+                <div class="form__field">
+                    <label for="formInput#search"></label>
+                    <input class="input input--text" id="formInput#search" type="text" name="search_query"
+                        placeholder="Ex: HTML, DRF" value="{{search_query}}" />
+                </div>        
+                <input class="btn btn--sub btn--lg" type="submit" value="Pesquisar" />
+                
+            </form>
+        </div>
+    </section>   
+
+    <section class="projectsList">
+        <div class="container">
+            <div class="grid grid--three">
+
+                {% for proj in projetos %}
+                <div class="column">
+                    <div class="card project card--dark">
+                        <a href="{% url 'projetoPage' proj.id %}" class="project">
+                            <img class="project__thumbnail" src="{{proj.thumbnail.url}}" alt="project thumbnail" />
+                            <div class="card__body">
+                                <h3 class="project__title">{{proj.nome}}</h3>
+                                <!-- <p><a class="project__author" href="#">por PROJ.AUTOR</a> -->
+                                <!-- </p> -->
+                                <p class="project--rating">
+                                    <span style="font-weight: bold;">{{proj.descricao|truncatewords:15}}</span>
+                                    <!-- </p> -->
+                                <div class="project__tags">
+                                    {% for tag in proj.tags.all %}
+                                    <!-- teste ... -->
+                                    <!-- <div class="project__tags">
+                                        <small> {{tag}}</small> -->
+                                    <span class="tag tag--outline">
+                                        <small style="color:black;">{{tag}}</small>
+                                    </span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}                
+            </div>          
+        </div>
+        </div>      
+</section>    
+{% include 'pagination.html' with queryset=projetos custom_range=custom_range %}   
+
+
+
+</main>
+{% endblock %}

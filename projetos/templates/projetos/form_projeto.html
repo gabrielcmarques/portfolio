@@ -1,0 +1,47 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<!-- Main Section -->
+<main class="formPage my-xl">
+    <div class="content-box">        
+        <div class="formWrapper">
+            
+            <a class="backButton" href="{% url 'projetosHome' %}"><i class="im im-angle-left"></i></a>
+            <br>
+            <h2><u>Crie um novo projeto</u>  </h2>
+            <h6><b>(Por questão de demonstração
+                rápida, preencha com qualquer coisa nos formulários menos nos de imagens)</b></h6>
+            <form class="form" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {% for field in form %}
+                <!-- Input:Text -->
+                <div class="form__field">
+                    <h6><label for="formInput#text">{{field.label}}</label></h6>
+                    {{field}}
+                </div>
+                {% endfor %}
+                
+                <div class="form__field">
+                    
+                    {% for tag in projeto.tags.all %}
+                    <div class="project-tag tag tag--pill tag--main" data-tag="{{tag.id}}"
+                        data-project="{{project.id}}">{{tag.name}} &#215;</div>
+                    {% endfor %}
+                </div>
+                
+
+                <div class="form__field">
+                    <label for="formInput#text">Tags</label>
+                    <textarea class="input" name="newtags" placeholder="Add tags here..."></textarea>
+                </div>
+                <h6><b>(Depois da criação, dentro do projeto/produto criado vai ter um botão com a função de Editar.
+                    O mesmo vai redirecionar para esse mesmo formulário para o usuário editar o que precisar e salvar.)</b></h6>
+                <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}

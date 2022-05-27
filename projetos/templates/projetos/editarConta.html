@@ -1,0 +1,47 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<main class="formPage my-xl" style="margin-top: 20%;">
+    <div class="auth">
+        <div class="card">
+            <div class="auth__header text-center">                      
+                <h3>Complete o seu cadastro</h3>
+                <p>Complete o cadastro para acessar as funcionalidades do nosso website</p>           
+            </div>
+
+            <form method="POST" action="#" class="form auth__form">
+                {% csrf_token %}
+
+                {% for field in form %}
+                <div class="form__field">
+                    <label for="formInput#text">{{field.label}}</label>
+                    {{field}}
+
+                    <!-- {% if field.help_text %}
+                    <small>{{field.help_text}}</small>
+                    {% endif %} -->
+
+                    {% for error in field.errors %}
+                    <p style="color: red;">{{error}}</p>
+                    {% endfor %}
+
+                </div>
+
+                {% endfor %}
+                <h6><b>Aqui não vai fazer nada por conta de demonstração. No app final o
+                    usuário vai ter seu perfil com todas as informações salvas no 
+                    database relacional da escolha após clicar em 'enviar' e vai poder
+                    utilizar as funcionaldades do website. </b></h6>
+                <div class="auth__actions">                    
+                    <input class="btn btn--sub btn--lg" type="submit" value="Enviar" />
+                </div>
+            </form>
+            <div class="auth__alternative">
+                <p>Já possui uma conta?</p>
+                <a href="{% url 'homepage' %}">Login</a>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock content %}
