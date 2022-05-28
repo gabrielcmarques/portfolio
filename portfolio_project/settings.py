@@ -32,7 +32,6 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'portfolio-gabrielcm.herokuapp.com']
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -88,8 +87,7 @@ SIMPLE_JWT = {
 
 
 
-MIDDLEWARE = [    
-
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -99,7 +97,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
 ]
 
 ROOT_URLCONF = 'portfolio_project.urls'
@@ -135,11 +132,11 @@ WSGI_APPLICATION = 'portfolio_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': '1',
-        'USER': '1',
-        'PASSWORD': '1',
-        'HOST': '1',
-        'PORT': '1',
+        'NAME': 'gabrielportfolio',
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
     }
 }
 
@@ -181,8 +178,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = '' 
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST')                  
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD'),
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -205,9 +202,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-AWS_S3_ACCESS_KEY_ID = ''
-AWS_S3_SECRET_ACCESS_KEY = ''
-AWS_STORAGE_BUCKET_NAME = 'portfolio-gabriel-bucket'
+AWS_S3_ACCESS_KEY_ID = os.environ.get('AWS_ID_KEY'),
+AWS_S3_SECRET_ACCESS_KEY = os.environ.get('AWS_ACC_KEY'),
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STG_BKT'),
 AWS_QUERYSTRING_AUTH = 'False'
 AWS_S3_FILE_OVERWRITE = 'True'
 # AWS_ACCESS_KEY_ID 
