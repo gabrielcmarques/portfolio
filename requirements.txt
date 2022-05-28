@@ -43,6 +43,7 @@ multidict==5.2.0
 numpy==1.22.1
 outcome==1.1.0
 packaging==21.3
+Pillow==9.1.1
 platformdirs==2.5.0
 pycparser==2.21
 pydantic==1.8.2

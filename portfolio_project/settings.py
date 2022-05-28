@@ -40,12 +40,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'portfolio_app',
-    'projetos',
+
+    # 'portfolio_app',
+    'portfolio_app.apps.PortfolioAppConfig',
+    # 'projetos',
+    'projetos.apps.ProjetosConfig',
 
     'corsheaders',
     'rest_framework',
-    'storages'
+    'storages',
 
 
 ]
@@ -88,12 +91,12 @@ SIMPLE_JWT = {
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -104,7 +107,10 @@ ROOT_URLCONF = 'portfolio_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        # 'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,7 +139,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'portfoliogabriel',
-        'USER': 'portfoliogabriel',
+        'USER': os.environ.get('DB_USER'),
         'PASSWORD': os.environ.get('DB_PASSWORD'),
         'HOST': os.environ.get('DB_HOST'),
         'PORT': os.environ.get('DB_PORT'),
@@ -181,19 +187,39 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST')                  
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD'),
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+AWS_S3_ACCESS_KEY_ID = os.environ.get('AWS_ID_KEY')     
+AWS_S3_SECRET_ACCESS_KEY = os.environ.get('AWS_ACC_KEY')  
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STG_BKT')  
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_DEFAULT_ACL = 'public-read'
+AWS_S3_OBJECT_PARAMETER = {
+    'CacheControl': 'max-age=86400'
+}
+AWS_LOCATION = 'static'
+
+AWS_QUERYSTRING_AUTH = False
+AWS_S3_FILE_OVERWRITE = True
+AWS_HEADERS = {
+    'Access-Control-Allow-Origin': '*',
+}
+# AWS_ACCESS_KEY_ID 
+# AWS_SECRET_ACCESS_KEY
+# AWS_S3_SESSION_PROFILE
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-
-STATIC_URL = '/static/'
-MEDIA_URL = '/images/'
+# STATIC_URL = '/static/'
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+# MEDIA_URL = '/images/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -201,15 +227,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-AWS_S3_ACCESS_KEY_ID = os.environ.get('AWS_ID_KEY'),
-AWS_S3_SECRET_ACCESS_KEY = os.environ.get('AWS_ACC_KEY'),
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STG_BKT'),
-AWS_QUERYSTRING_AUTH = 'False'
-AWS_S3_FILE_OVERWRITE = 'True'
-# AWS_ACCESS_KEY_ID 
-# AWS_SECRET_ACCESS_KEY
-# AWS_S3_SESSION_PROFILE
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
 if os.getcwd() == '/app':
     DEBUG = False
