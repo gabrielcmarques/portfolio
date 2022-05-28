@@ -21,7 +21,6 @@ colorama==0.4.4
 cryptography==36.0.1
 Deprecated==1.2.13
 distlib==0.3.4
-gunicorn
 Django==4.0.1
 django-storages==1.12.3
 django-widget-tweaks==1.4.12
@@ -32,6 +31,7 @@ esbonio==0.10.3
 filelock==3.5.0
 frozenlist==1.3.0
 geoip2==4.5.0
+gunicorn==20.1.0
 h11==0.13.0
 idna==3.3
 imagesize==1.3.0
