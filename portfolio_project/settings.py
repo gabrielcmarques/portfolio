@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-zgpqqr5m25w%=qsx#$z*2q=04-g^*5-7(6k9jzaf1^5t#4hpd=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'portfolio-gabrielcm.herokuapp.com']
 
 
 # Application definition
@@ -43,8 +43,10 @@ INSTALLED_APPS = [
 
     'portfolio_app',
     'projetos',
+
     'corsheaders',
     'rest_framework',
+    'storages'
 
 
 ]
@@ -90,7 +92,7 @@ MIDDLEWARE = [
 
     'django.middleware.security.SecurityMiddleware',
 
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -127,23 +129,23 @@ WSGI_APPLICATION = 'portfolio_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'portfolio-gabriel',
-#         'USER': 'postgres',
-#         'PASSWORD': '',
-#         'HOST': '',
-#         'PORT': '',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'portfoliogabriel',
+        'USER': 'portfoliogabriel',
+        'PASSWORD': 'Rpgonline81!',
+        'HOST': 'database-1.co99kjhwbbkp.sa-east-1.rds.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -204,3 +206,17 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+AWS_S3_ACCESS_KEY_ID = 'AKIARA2PPAZUIGVUH5XN'
+AWS_S3_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'portfolio-gabriel-bucket'
+AWS_QUERYSTRING_AUTH = 'False'
+AWS_S3_FILE_OVERWRITE = 'True'
+# AWS_ACCESS_KEY_ID 
+# AWS_SECRET_ACCESS_KEY
+# AWS_S3_SESSION_PROFILE
+
+if os.getcwd() == '/app':
+    DEBUG = False

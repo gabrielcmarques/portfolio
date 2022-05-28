@@ -12,6 +12,8 @@ atpublic==3.0.1
 attrs==21.4.0
 Babel==2.9.1
 bcrypt==3.2.0
+boto3==1.23.9
+botocore==1.26.10
 certifi==2021.10.8
 cffi==1.15.0
 charset-normalizer==2.0.10
@@ -20,6 +22,7 @@ cryptography==36.0.1
 Deprecated==1.2.13
 distlib==0.3.4
 Django==4.0.1
+django-storages==1.12.3
 django-widget-tweaks==1.4.12
 djangorestframework==3.13.1
 djangorestframework-simplejwt==5.2.0
@@ -32,6 +35,7 @@ h11==0.13.0
 idna==3.3
 imagesize==1.3.0
 Jinja2==3.0.3
+jmespath==1.0.0
 MarkupSafe==2.0.1
 maxminddb==2.2.0
 multidict==5.2.0
@@ -48,9 +52,11 @@ pymemcache==3.5.0
 pyOpenSSL==21.0.0
 pyparsing==3.0.7
 pyspellchecker==0.6.3
+python-dateutil==2.8.2
 pytz==2021.3
 PyYAML==6.0
 requests==2.27.1
+s3transfer==0.5.2
 selenium==4.1.0
 six==1.16.0
 sniffio==1.2.0
