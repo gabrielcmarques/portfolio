@@ -21,6 +21,7 @@ colorama==0.4.4
 cryptography==36.0.1
 Deprecated==1.2.13
 distlib==0.3.4
+gunicorn
 Django==4.0.1
 django-storages==1.12.3
 django-widget-tweaks==1.4.12
