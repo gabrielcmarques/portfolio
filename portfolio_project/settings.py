@@ -143,6 +143,11 @@ DATABASES = {
         'PASSWORD': os.environ.get('DB_PASSWORD'),
         'HOST': os.environ.get('DB_HOST'),
         'PORT': os.environ.get('DB_PORT'),
+
+        # 'USER': os.environ.get('DB_USER'),
+        # 'PASSWORD': os.environ.get('DB_PASSWORD'),
+        # 'HOST': os.environ.get('DB_HOST'),
+        # 'PORT': os.environ.get('DB_PORT'),
     }
 }
 
@@ -193,7 +198,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 AWS_S3_ACCESS_KEY_ID = os.environ.get('AWS_ID_KEY')     
 AWS_S3_SECRET_ACCESS_KEY = os.environ.get('AWS_ACC_KEY')  
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STG_BKT')  
-AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+# AWS_S3_ACCESS_KEY_ID = os.environ.get('AWS_ID_KEY')     
+# AWS_S3_SECRET_ACCESS_KEY = os.environ.get('AWS_ACC_KEY')  
+# AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STG_BKT')
+#   
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.sa-east-1.amazonaws.com'
 AWS_DEFAULT_ACL = 'public-read'
 AWS_S3_OBJECT_PARAMETER = {
     'CacheControl': 'max-age=86400'
