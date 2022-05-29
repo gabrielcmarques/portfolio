@@ -192,29 +192,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST')                  
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD'),
 
-AWS_S3_ACCESS_KEY_ID = os.environ.get('AWS_ID_KEY')     
-AWS_S3_SECRET_ACCESS_KEY = os.environ.get('AWS_ACC_KEY')  
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STG_BKT')  
-# AWS_S3_ACCESS_KEY_ID = os.environ.get('AWS_ID_KEY')     
-# AWS_S3_SECRET_ACCESS_KEY = os.environ.get('AWS_ACC_KEY')  
-# AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STG_BKT')
-#   
-AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.sa-east-1.amazonaws.com'
-AWS_DEFAULT_ACL = 'public-read'
-AWS_S3_OBJECT_PARAMETER = {
-    'CacheControl': 'max-age=86400'
-}
-AWS_LOCATION = 'static'
-
-AWS_QUERYSTRING_AUTH = False
-AWS_S3_FILE_OVERWRITE = True
-AWS_HEADERS = {
-    'Access-Control-Allow-Origin': '*',
-}
-# AWS_ACCESS_KEY_ID 
-# AWS_SECRET_ACCESS_KEY
-# AWS_S3_SESSION_PROFILE
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
@@ -238,6 +215,29 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+
+AWS_S3_ACCESS_KEY_ID = os.environ.get('AWS_ID_KEY')     
+AWS_S3_SECRET_ACCESS_KEY = os.environ.get('AWS_ACC_KEY')  
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STG_BKT')  
+# AWS_S3_ACCESS_KEY_ID = os.environ.get('AWS_ID_KEY')     
+# AWS_S3_SECRET_ACCESS_KEY = os.environ.get('AWS_ACC_KEY')  
+# AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STG_BKT')
+#   
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.sa-east-1.amazonaws.com'
+AWS_DEFAULT_ACL = 'public-read'
+AWS_S3_OBJECT_PARAMETER = {
+    'CacheControl': 'max-age=86400'
+}
+AWS_LOCATION = 'static'
+
+AWS_QUERYSTRING_AUTH = False
+AWS_S3_FILE_OVERWRITE = True
+AWS_HEADERS = {
+    'Access-Control-Allow-Origin': '*',
+}
+# AWS_ACCESS_KEY_ID 
+# AWS_SECRET_ACCESS_KEY
+# AWS_S3_SESSION_PROFILE
 
 if os.getcwd() == '/app':
     DEBUG = False
