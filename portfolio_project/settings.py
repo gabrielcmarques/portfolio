@@ -28,8 +28,7 @@ SECRET_KEY = 'django-insecure-zgpqqr5m25w%=qsx#$z*2q=04-g^*5-7(6k9jzaf1^5t#4hpd=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'portfolio-gabrielcm.herokuapp.com']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'portfolio-gabrielcm.herokuapp.com', 'sa-east-1.console.aws.amazon.com']
 
 
 # Application definition
@@ -193,9 +192,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST')                  
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD'),
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 AWS_S3_ACCESS_KEY_ID = os.environ.get('AWS_ID_KEY')     
 AWS_S3_SECRET_ACCESS_KEY = os.environ.get('AWS_ACC_KEY')  
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STG_BKT')  
@@ -230,6 +226,9 @@ MEDIA_URL = '/images/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
