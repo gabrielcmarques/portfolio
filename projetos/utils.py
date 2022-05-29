@@ -56,7 +56,7 @@ def searchProjects(request):
 
 def mandarEmail(request):
     form = CriacaoUsuarioCustomizada(request.POST)
-    email_user = request.POST.get('email')		
+    email_user = request.POST.get('email')	
     messages.success(request, "Conta criada com sucesso! Por favor, confirme no seu email.")
     # EMAIL #
     subject = 'Seja bem vindo ao meu Website!'
