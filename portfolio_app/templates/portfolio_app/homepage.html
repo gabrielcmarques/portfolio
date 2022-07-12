@@ -3,75 +3,189 @@
 {% block content %}
 
 <main class="auth">
-    <section class="auth__header" style="padding-bottom: 10%; ">    
+    <section class="hero-section__box" style="width: 1095px;">
 
-<div class="card" style="width: 1200px">
-    <div class="card__body">       
-    {% for avatar in perfil %} 
-    <img class="avatar avatar--lg" src="{{avatar.imagem_avatar.url}}"/> 
-    {% endfor %}
-    <h2 style="margin-left: 20%;">Sobre mim:</h2>         
-        <h6 style="margin-left: 20%;" >Sou entusiasta na área de computação, adoro usar o computador e navegar na internet
-            desde jovem. Decidi ir para o caminho da programação, em específico para Web Developer e 
-            nos últimos 3 anos tenho me dedicado para adquirir o conhecimento necessário 
-            para trabalhar com algo que eu gosto estudando programação. Estou programando em
-            Python há mais de um ano e sigo em busca de oportunidades profissionais para exercer minha paixão </h6>
+        <div class="card" >
+            <div class="card__body">
+            <img class="avatar--profile" src="https://i.imgur.com/BHwqOoz.jpg"/> 
+            <h2 class="" style="text-align: left; padding-left: 30%;">Sobre mim:</p>         
+                <h6 class="dev__info" style="margin-left: 30rem;">Olá tudo bem? Meu nome e Gabriel, sou um Programador especializado 
+                    no Back-end, sempre fui entusiasta na área de computação desde jovem. Decidi ir para o caminho da programação e 
+                    automação de sistemas, nos últimos 5 anos tenho me dedicado para adquirir o conhecimento necessário para trabalhar 
+                    com algo que eu gosto estudando programação. Sigo em busca de oportunidades profissionais para exercer minha paixão 
+                    como programador de sistemas.
+                </h6>
+            </div>
+        </div>
+<!--------------------- Ferramentas  --------------------->
+        <div class="card" style="width: 1095px;">
+            <div class="card__body" >     
+                <h2 style="text-align: center;" id="mpf">Minhas principais ferramentas:</h2>
+                <ul>   
+                    <div style="margin-left: 19%;">
+                        <img class="tools tools--md" src="https://i.imgur.com/JkfExuR.jpg" title="Python" />
+                        <img class="tools tools--md" src="https://i.imgur.com/9pISVwE.jpg" title="Django"/>
+                        <img class="tools tools--md" src="https://i.imgur.com/5mn8Yni.jpg" title="PostgreSQL"/>
+                        <img class="tools tools--md" src="https://i.imgur.com/i88sDAm.jpg" title="Git e Github"/>
+                        <img class="tools tools--md" src="https://i.imgur.com/V56TTPG.jpg" title="Docker"/>
+                        <img class="tools tools--md" src="https://i.imgur.com/mJw7cYC.jpg" title="HTML"/>
+                        <img class="tools tools--md" src="https://i.imgur.com/X7awHaC.jpg" title="CSS"/>
+                    </div>
+                <h6>
+                    <li><a href="https://www.cursoemvideo.com/validacao-de-certificado/?codigo=1C9F1-685A-5" target="_blank"><u>Python: </u></a> OOP, Loops, Dicts, Request, Date & Time, Class, Functions, I/O, Exceptions, Files.</li>
+                    <li><a href="https://www.udemy.com/certificate/UC-88ad5722-76f2-489d-8895-df58c5a7aa42/" target="_blank"><u>Django</u></a> C.R.U.D, Hosting, User Registration, Login/Logout, SQL, Emails, Search, Pagination. </li>
+                    <li><a href="https://www.udemy.com/certificate/UC-88ad5722-76f2-489d-8895-df58c5a7aa42/" target="_blank"><u>Django Rest Framework API</u></a> Restful API, Serializers, Postman, Authentication & Authorization, JSON Web Tokens, GET/POST/PUT/DELETE Requests, CORS.</li>
+                    <li>Database relacional com Mysql e PostgreSQL: CLAUSES, CONSTRAINTS, JOINS, Backups, Queryset, Psycopg2, ORM, Integration</li>
+                    <li>Controle de versionamento com Git e Github</li>
+                    <li>Docker Containers</li>
+                    <li>HTML & CSS Básico</li>    
+                </h6>            
+                </ul>
+            </div>
+        </div>
+<!--------------------- Planos  --------------------->
+        <div class="card" style="width: 1095px;">   
+            <div class="card__body" >    
+            <h2 style="text-align: center;">Planos de estudo para Julho/Agosto 2022:</h2>
+            <ul>
+                <div style="margin-left: 25%;">
+                    <img class="tools tools--md" src="https://i.imgur.com/cJV58PT.jpg" title="Javascript" />
+                    <img class="tools tools--md" src="https://i.imgur.com/0y7gkEm.jpg" title="Revisar"/>
+                    <img class="tools tools--md" src="https://i.imgur.com/9WOg2Sz.jpg" title="VueJS"/>
+                    <img class="tools tools--md" src="https://i.imgur.com/mJw7cYC.jpg" title="HTML"/>
+                    <img class="tools tools--md" src="https://i.imgur.com/X7awHaC.jpg" title="CSS"/>
+                </div>
+
+                <h6>
+                    <li>Javascript & NodeJS</li>            
+                    <li>Revisar e treinar mais os conteúdos aprendidos</li>   
+                    <li>Vue JS</li> 
+                    <li>HTML & CSS Avançado</li> 
+                </h6>  
+            </ul>   
+            </div>     
+        </div>
+
+<!--------------------- Projetos  --------------------->
+    <div class="card" id="projetos">
+        <div class="project">
+            <h2 style="text-align: center;">Conheça os meus projetos:</h2>     
+
+            <div class="card__body">                 
+                <img src="https://i.imgur.com/f0f7jXr.jpg" class="avatarright--lg"/>
+                <h5><u>App C.R.U.D:</u></h5>                
+                <p style="padding-right: 53%;">Aplicativos baseados em <a href="https://pt.wikipedia.org/wiki/CRUD">CRUD</a>,
+                onde o usuário final vai poder criar postagens para websites como blogs, notícias e e-commerce, adicionando 
+                título, corpo da mensagem, tags, imagens e anexos, formatações em markdown como <i>Italic</i>, <b>Bold</b> e <u>Sublinhado</u>.</p>                
+            </div>
+
+            <div class="devInfo__otherSkills" style="padding-left: 2%;">
+                <span class="tag tag--pill tag--lg">
+                    <small>Python</small>
+                </span>
+                <span class="tag tag--pill tag--lg">
+                    <small>Django</small>
+                </span>
+                <span class="tag tag--pill tag--lg">
+                    <small>HTML</small>
+                </span>
+                <span class="tag tag--pill tag--lg">
+                    <small>CSS</small>
+                </span>
+                <span class="tag tag--pill tag--lg">
+                    <small>SQL</small>
+                </span>
+            </div>
+        </div>
+    </div>
+<!--------------------- Projeto2  --------------------->
+    <div class="card">
+        <div class="project">
+            <div class="card__body">                 
+                <img src="https://i.imgur.com/xcmSSAQ.jpg" class="avatarleft--lg" />
+                <h5 style="padding-left: 52%;"><u>Cadastro de Usuários:</u></h5>                
+                <p style="padding-left: 52%;">Sistema de cadastro para o usuário final do website, eu separo em três etapas, primeiro 
+                apenas o email e senha, meu bot vai gerar um token e enviar um email confirmando o cadastro, após o usuário confirmar, 
+                vai ser redirecionado para completar o resto das informações que vão ser salvas em um servidor SQL. Posso também 
+                configurar esse bot de emails para newsletters contando novidades do website para o usuário cadastrado.</p>                
+            </div>
+
+            <div class="devInfo__otherSkills" style="padding-left: 51%;">
+                <span class="tag tag--pill tag--lg">
+                    <small>Python</small>
+                </span>
+                <span class="tag tag--pill tag--lg">
+                    <small>Django</small>
+                </span>
+                <span class="tag tag--pill tag--lg">
+                    <small>Emails</small>
+                </span>
+                <span class="tag tag--pill tag--lg">
+                    <small>SQL</small>
+                </span>
+            </div>
+        </div>
+    </div>
+<!--------------------- Projeto 3  --------------------->
+    <div class="card">
+        <div class="project">
+            <div class="card__body">                 
+                <img src="https://i.imgur.com/YFSDsDl.jpg" class="avatarright--lg"/>
+                <h5><u>API Restful:</u></h5>                
+                <p style="padding-right: 53%;">API Restful do website, dando query nas informações do database SQL,
+                 filtrar a informação por meio de ORM da linguagem de programação para disponibilizar a informação 
+                 em um formato JSON, XML, XLSX para ser utilizada em diversos endpoints.</p>                
+            </div>
+
+            <div class="devInfo__otherSkills">
+                <span class="tag tag--pill tag--lg">
+                    <small>Python</small>
+                </span>
+                <span class="tag tag--pill tag--lg">
+                    <small>SQL</small>
+                </span>
+                <span class="tag tag--pill tag--lg">
+                    <small>Django Rest Framework</small>
+                </span>
+            </div>
+        </div>
+    </div>
+<!--------------------- Projeto 4  --------------------->
+<div class="card">
+    <div class="project">
+        <div class="card__body">                 
+            <img src="https://i.imgur.com/xl9pw5V.jpg" class="avatarleft--lg" />
+            <h5 style="padding-left: 52%;"><u>SQL Database e ORMS:</u></h5>                
+            <p style="padding-left: 52%;">Tenho conhecimentos avançados em databases relacionais MySQL e PostgreSQL, 
+            para armazenar a informação que vai ser cadastrada no webiste, desde informações do usuário final como 
+            nome, idade, endereço, telefone, id, até produtos do website como preço, descrição, data de criação, 
+            modelo. Utilizando CLAUSES, CONSTRAINTS, JOINS, Backups, Queryset</p>                
+        </div>
+
+        <div class="devInfo__otherSkills" style="padding-left: 51%;">
+            <span class="tag tag--pill tag--lg">
+                <small>VSCode</small>
+            </span>
+            <span class="tag tag--pill tag--lg">
+                <small>MySQL</small>
+            </span>
+            <span class="tag tag--pill tag--lg">
+                <small>PostgreSQL</small>
+            </span>
+        </div>
     </div>
 </div>
 
-<div class="card" style="width: 1200px">
-    <div class="card__body">     
-        <h2>Minhas principais ferramentas:</h2>
-        <ul>
-            {% for foto in perfil %}
-            <img class="avatar avatar--md" src="{{foto.ferramenta1.url}}" title="Python" />
-            <img class="avatar avatar--md" src="{{foto.ferramenta2.url}}" title="Django"/>
-            <img class="avatar avatar--md" src="{{foto.ferramenta3.url}}" title="PostgreSQL"/>
-            <img class="avatar avatar--md" src="{{foto.ferramenta4.url}}" title="Git e Github"/>
-            <img class="avatar avatar--md" src="{{foto.ferramenta5.url}}" title="Docker"/>
-            {% endfor %}
-            
-            <h6>
-            <li><a href="https://www.cursoemvideo.com/validacao-de-certificado/?codigo=1C9F1-685A-5" target="_blank"><u>Python 3</u></a> com o professor Gustavo Guanabara pelo <a href="https://www.cursoemvideo.com/" target="_blank"><u>Cursoemvideo.com</u></a></li>
-            <li><a href="https://www.udemy.com/certificate/UC-88ad5722-76f2-489d-8895-df58c5a7aa42/" target="_blank"><u>Django 2021 e DRF API</u></a> com o professor Dennis Ivy pelo <a href="https://www.udemy.com/course/python-django-2021-complete-course/" target="_blank"><u>Udemy.com</u></a></li>
-            <li>Database relacional com Mysql e PostgreSQL</li>
-            <li>Controle de versionamento com Git e Github</li>
-            <li>Docker Containers</li>
-            <li>Em breve Javascript NodeJS</li>
-            <!-- <li><a href="#"><u> Entre outras qualificações ()</u></a></li> -->
-            
-            
-        </h6>
-        </ul>
+<!--------------------- CONTATO  --------------------->
+    <div class="card" style="width: 1095px; height: 300px;">
+        <div class="card__body" >     
+            <h2 style="text-align: center;" id="contato">Contato:</h2>
+            <h5>Linkedin: <a href="https://www.linkedin.com/in/gabriel-christo-marques/" target="_blank"> Gabriel C. Marques</a></h5>
+            <h5>Email: <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank">gabrielchristomarques@gmail.com</a></h5>
+        </div>
     </div>
     
-</div>
-
-<!-- <div class="card" style="width: 1000px">
-    <div class="card__body">     
-        <h2>Projetos:</h2>
-        <a href="{% url 'projetosHome' %}" target="_blank"><u>Em contruçao..</u></a>
-    </div>
-</div> -->
-
-<!-- <div class="card" style="width: 1000px">
-    <div class="card__body">     
-        <h2> Contato:  </h2>
-        <p>Gmail: <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank"><u>gabrielchristomarques@gmail.com</u></a></p>
-        <p>Linkedin: <a href="https://www.linkedin.com/in/gabriel-christo-marques/" target="_blank"><u>Gabriel C. Marques</u></a></p>   
-    </div>
-</div> -->
-
-    <!-- <h1>Heading H1 (48px)</h1>
-    <h2>Heading H2 (36px)</h2>
-    <h3>Heading H3 (32px)</h3>
-    <h4>Heading H4 (28px)</h4>
-    <h5>Heading H5 (24px)</h5>
-    <h6>Heading H6 (18px)</h6>
-    <p>Paragraph text (16px)</p>
-    <span>Span Tag (16px)</span>
-    <strong>Strong tag (16px)</strong> -->
-</section>
-
+    </section>
 </main>
 {% endblock %}
+

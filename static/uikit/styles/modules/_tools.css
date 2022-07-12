@@ -1,0 +1,39 @@
+.tools {
+  border-radius: 50%;
+  border: 2px solid var(--color-main);
+  object-fit: cover;
+} 
+
+.tools--post {
+  border: 50%;
+  border: 2px solid var(--color-main);
+  float: left;
+  height: 18rem;
+  width: 18rem;
+}
+
+.tools--xl {
+  height: 20rem;
+  width: 20rem;
+}
+
+/* .tools--lg {
+  height: 15rem;
+  width: 15rem;
+} */
+
+.tools--lg {
+  float: left;
+  height: 18rem;
+  width: 18rem;
+}
+
+.tools--md {
+  height: 7rem;
+  width: 7rem;
+}
+
+.tools--sm {
+  height: 5rem;
+  width: 5rem;
+}

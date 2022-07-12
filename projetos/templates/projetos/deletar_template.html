@@ -1,13 +1,13 @@
 {% extends 'main.html' %}
 {% block content %}
-        <div class="card--dark" style="padding: 3%;">  
+<div class="card--dark" style="padding: 3%;">
 
-            <form class="form" href="{% url 'projetosHome' %}" method="POST">
-                {% csrf_token %}
-                <p>Tem certeza que deseja deletar o projeto [Projeto_Nome]?</p>
-                <a class="btn btn--sub" href="{% url 'projetosHome' %}">Voltar</a>
-                <input class="btn btn--sub " type="submit" value="Confirmar" />
-            </form>
+    <form class="form" href="{% url 'projetosHome' %}" method="POST">
+        {% csrf_token %}
+        <p>Tem certeza que deseja deletar o projeto [Projeto_Nome]?</p>
+        <a class="btn btn--sub" href="{% url 'projetosHome' %}">Voltar</a>
+        <input class="btn btn--sub " type="submit" value="Confirmar" />
+    </form>
 
-        </div>
+</div>
 {% endblock %}

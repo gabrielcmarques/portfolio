@@ -8,34 +8,23 @@
         <div class="layout">
             <div class="column column--1of3">
                 <h3 class="singleProject__subtitle">Ferramentas</h3>
-                <img src="{{ proj.thumbnail.url }}">
+                <img src="#">
                 <div class="singleProject__toolStack">
-                    {% for tag in proj.tags.all %}
                     <span class="tag tag--pill tag--sub tag--lg">
-                        <small>{{tag}}</small>
+                        <small></small>
                     </span>
-                    {% endfor %}
                 </div>
-
-                <!-- {% if project.demo_link %} -->
-                <a class="singleProject__liveLink" href="#" target="_blank"><i class="im im-external-link"></i>Live Demo
-
-                </a>
-                <!-- {% endif %} -->
             </div>
+
             <div class="column column--2of3">
-                <img src="{{ proj.imagem_demo.url }}">                
-                <h2 class="singleProject__title">{{proj.nome}}</h2>
+                <img src="">
+                <h2 class="singleProject__title"></h2>
                 <h3 class="singleProject__subtitle">Descrição</h3>
                 <div class="singleProject__info">
-                    {{proj.descricao}}
+
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
-    </div>
 </main>
 
 {% endblock %}
