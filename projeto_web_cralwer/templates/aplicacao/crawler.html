@@ -1,7 +1,8 @@
 {% extends 'aplicacao/main.html' %}
 
 {% block content %}
-<h2>Cole abaixo a url do site a ser pesquisado</h2>
+<h2><a href="https://portfolio-gabrielcm.herokuapp.com/api/artigos/"></a> Acesse a API!</h2>
+<h2>Cole abaixo a url do site a ser pesquisado. Ex: <i>https://github.com/</i>  </h2>
 <form method="POST" action="{% url 'crawler-add' %}" role="form">
   {% csrf_token %}
   <div class="form-group">

@@ -12,5 +12,8 @@ path('projetos/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 
 path('', views.getRoutes),
 path('projetos/', views.getProjects),
-path('projetos/<str:pk>/', views.getProject),
+path('projetos/<str:pk>/', views.getArtigos),
+
+path('artigos/', views.getArtigos),
+path('artigo/<str:pk>/', views.getArtigo),
 ]

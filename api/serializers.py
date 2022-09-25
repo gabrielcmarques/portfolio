@@ -1,12 +1,12 @@
 from rest_framework import serializers
 from projetos.models import Projeto, Perfil, Tag
+from projeto_web_cralwer.models import Artigo
 
 
 class PerfilSerializer(serializers.ModelSerializer):    
     class Meta:
         model = Perfil
         fields = '__all__'
-        
 
 
 class TagSerializer(serializers.ModelSerializer):
@@ -21,4 +21,10 @@ class ProjetoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Projeto
+        fields = '__all__'
+
+
+class WebCrawlerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Artigo
         fields = '__all__'
