@@ -25,6 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('DB_USER'),
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -42,12 +43,11 @@ INSTALLED_APPS = [
 
     'portfolio_app.apps.PortfolioAppConfig',
     'projetos.apps.ProjetosConfig',
-
+    'projeto_web_cralwer.apps.ProjetoWebCralwerConfig',
+    
     'corsheaders',
     'rest_framework',
     'storages',
-
-
 ]
 
 REST_FRAMEWORK = {

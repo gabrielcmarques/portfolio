@@ -23,7 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
     path('', include('portfolio_app.urls')),    
-    path('projetos/', include('projetos.urls')),
+    # path('projetos/', include('projetos.urls')),
+    path('projetos/web-crawler/', include('projeto_web_cralwer.urls')),
     path('api/', include('api.urls')),
 ]
 

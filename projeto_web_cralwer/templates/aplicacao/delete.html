@@ -1,0 +1,8 @@
+<h3>Você tem certeza que deseja deletar o item "{{artigo.id}}"?</h3>
+
+<a href="{% url 'crawler' %}">Cancelar</a>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" name="Confirmar">
+</form>

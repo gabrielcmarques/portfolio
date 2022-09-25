@@ -5,8 +5,7 @@ from .forms import CriacaoUsuarioCustomizada, EditarPerfilUsuarioCustomizada, Fo
 from .models import Projeto, Tag, Perfil
 from .utils import searchProjects, paginateProjects, mandarEmail
 
-#  TUDO VAI ESTAR BEM SIMPLES POR QUESTÃO DE DEMONSTRAÇÃO. NUMA VERSÃO REAL #
-#  AS FUNÇÕES VÃO UTILIZAR DATABASES RELACIONAIS E TER MAIS FUNCIONALIDADES   #
+# APENAS TESTES. ESSA ROTA NAO FUNCIONA #
 
 # url/projetos #
 def projetosHome(request):
