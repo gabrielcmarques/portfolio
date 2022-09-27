@@ -21,7 +21,8 @@
           <div class="item-row">
             <a class="btn btn-sm btn-info" href="{% url 'crawler-edit' url.id %}">Editar</a>
             <a class="btn btn-sm btn-danger" href="{% url 'crawler-delete' url.id %}">Deletar</a>
-            <li class="">Link #{{url.id}}: {{ url.url }}</li>
+            <li style="text-transform: uppercase;"><u>{{url.titulo}}</u>: </li>
+            <li>{{ url.url }}</li>
           </div>
         {% endfor %}
       </ul>

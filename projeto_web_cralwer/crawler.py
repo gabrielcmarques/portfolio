@@ -13,13 +13,20 @@ def webCrawler(page):
 
     for link in search:        
         if link not in total_links:
-            dupe_list.append(link)
-            Artigo(
+            try:
+                dupe_list.append()
+            except:
+                pass          
+        
+        url_label = link.split(".")[1]
+        print(url_label)
+
+        Artigo(
               url=link,
-              titulo='teste'
-              ).save()
-            
-            total_links = link            
+              titulo=url_label.replace('com/', '').replace('/', ' ')
+              ).save()  
+        
+        total_links = link            
             
             # Considerei salvar em txt, mas é mais fácil simples manter em uma variável.
             # with open("links.txt", "a") as file:
