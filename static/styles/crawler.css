@@ -1,0 +1,172 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+.body{
+  background-color: #194A8D;
+}
+
+ul{
+  list-style-type: none;
+}
+
+li{
+  font-size: 18px;
+  text-shadow: 1px 1px #000000;
+}
+
+input{
+  width: 100%;
+  padding: 15px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #d3d3d3;  
+}
+
+.submit{
+  background-color: #2E86C1 ;
+}
+
+.center-column{
+  width: 800px;
+  margin: 20px auto;
+  padding:10px;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+}
+
+.item-row{
+  background-color: #194A8D ;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 18px;
+  box-shadow: 0px -1px 10px -4px rgba(0,0,0,0.75);
+}
+
+.input-group{
+  color: #000000 ;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+/* NavBar */
+
+.header {
+  position: sticky;
+  z-index: 111;
+  background-color: #2d2d39;
+  padding: 1.5rem 0;
+}
+
+/* .header__nav > ul {
+  display: inline-flex;
+  align-items: center;
+  list-style: none;
+  gap: 6.5rem;
+} */
+
+.header__menuItem a {
+  transition: all 0.5s ease-in-out;
+  padding: 1rem 3rem;
+}
+
+.header__menuItem a:hover {
+  padding: 1rem 3rem;
+  border-radius: 3px;
+  background: var(--color-sub-light);
+}
+
+.container {
+  width: 92%;
+  max-width: 165rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.container--narrow {
+  width: 92%;
+  max-width: 120rem;
+}
+
+.toggle-menu > span {
+  display: none;
+}
+
+.card{
+  padding: 3rem 4rem;
+  width: 95%;
+  max-width: 65rem;
+}
+
+/* ============== FONTE ============== */
+
+
+
+* {
+  font-family: var(--font-base);
+}
+
+h1 {
+  font-size: 4.8rem;
+  font-weight: var(--font-medium);
+}
+
+h2 {
+  font-size: 3.6rem;
+  font-weight: var(--font-bold);
+}
+
+h3 {
+  font-size: 3.2rem;
+  font-weight: var(--font-medium);
+}
+
+h4 {
+  font-size: 2.8rem;
+  font-weight: var(--font-medium);
+}
+
+h5 {
+  font-size: 2.4rem;
+  font-weight: var(--font-medium);
+}
+
+h5,
+h6 {
+  font-weight: var(--font-regular);
+}
+
+h6 {
+  font-size: 1.8rem;
+}
+
+p,
+span,
+strong {
+  font-size: 1.6rem;
+  color: var(--color-text);
+  font-weight: var(--font-regular);
+}
+
+strong {
+  font-weight: var(--font-medium);
+}
+
+pre,
+pre > *,
+pre > code * {
+  font-family: var(--font-monospace) !important;
+}
+
+a {
+  padding-bottom: 2px;
+  text-decoration: none;
+  display: inline-block;
+  color: var(--color-main);
+  font-weight: var(--font-medium);
+}
