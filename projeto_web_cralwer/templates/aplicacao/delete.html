@@ -1,8 +1,16 @@
-<h3>Você tem certeza que deseja deletar o item "{{artigo.id}}"?</h3>
+{% extends 'aplicacao/main.html' %}
 
-<a href="{% url 'crawler' %}">Cancelar</a>
+{% block content %}
+<body class="body">
+  <div class="center-column" style="margin-top: 15rem;">
+    <h3>Você tem certeza que deseja deletar o artigo "{{artigo.titulo|title}}"?</h3>  
 
-<form action="" method="POST">
-  {% csrf_token %}
-  <input type="submit" name="Confirmar">
-</form>
+    <form action="" method="POST">
+    {% csrf_token %}
+      <input class="btn-danger" type="submit" name="Confirmar"/>
+    </form> 
+    <a class="btn btn-sm btn-info mt-2" href="{% url 'crawler' %}">Cancelar</a>
+    
+  </div>
+</body>
+{% endblock %}

@@ -1,9 +1,63 @@
 {% extends 'aplicacao/main.html' %}
 
 {% block content %}
-<h1>Blog: Como teorizei e criei essa aplicação Web Crawler</h1>
+<section class="hero-section__box" style="width: 1400px;">
+  <div class="card" style="margin-left: 30%; margin-top: 3%;">
+    <div class="card_body">
+      <h2 class="text-center">Vídeo Vlog:</h2>
+      <h3 class="text-center"> Assista em Fullscreen para ver melhor o código</h3>
+      <br>
+      <iframe width="900" height="506" src="https://www.youtube.com/embed/Eber6Hy7aDk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>    
+  </div>
 
-<p>Em construção ... Mas já tem vídeo explicando!</p>
-<h3>- <a href="https://www.youtube.com/watch?v=Eber6Hy7aDk" target="_blank">Vídeo Vlog</a></h3>
+  <div class="card" style="margin-left: 30%; margin-top: 1%;">
+    <div class="card__body">
+      <h2 class="text-center">Blog:</h2> 
+      <h3 class="text-center"></h3>
+      <br>
+      <p><a href="https://github.com/gabrielcmarques/portfolio/tree/master/projeto_web_cralwer" target="_blank">Github para referência</a> </p>
+      <p>Processo da construção do app Web Crawler. Objetivos:                   
+          <p>- Escanear um website a procura de links dentro de hrefs</p> 
+          <p>- Armazenar localmente</p> 
+          <p>- Imprimir no browser</p> 
+          <p>- Permitir funções para deletar ou editar manualmente o link e label</p>  
+          <p>- Disponibilizar uma API em formato JSON</p>       
+          
+          <p>Para realizar cada tarefa, utilizei a linguagem que mais domino no momento, Python 
+            com o framework Django e Django Rest Framework. Também irei refazer em Javascript NodeJS, 
+            linguagem que comecei a estudar recentemente em Agosto 2022, foi um ótimo exercício.</p>
+            <img width="900" height="506" src="https://www.shuup.com/wp-content/uploads/2017/12/python-plus-django-1.jpg" alt="">
+          <p>Comecei criando uma aplicação web simples em Django com 3 arquivos HTML: um para aceitar um 'texto', 
+            'input edit' e botão para 'submit'. O de editar com 'input', 'cancelar' e 'submit', e cancelar com 
+            'input delete' e 'cancelar'.</p>            
+          <p>Configurando o MVC do django, Models.py, Urls.py e Views.py, e o principal, Crawler.py para 
+            realizar a função de escanear o website e realizar os filtros. Nesse arquivo utilizei a biblioteca 
+            <a href="https://requests.readthedocs.io/en/latest/" target="_blank">'requests'</a>  que faz requisições GET para 
+            consulta, e 're', que realiza filtros de <a href="https://docs.python.org/3/library/re.html" target="_blank">Regular 
+            Expression</a> para filtrando strings de texto.</p>
+          <p>Primeiro o arquivo realiza as importações das libraries e do Modelo "Artigo", que molda automaticamente 
+            um objeto da forma que desejarmos, nesse caso para receber um Titulo e uma URL. A função 'webCrawler' 
+            vai receber a URL do website como argumento, cria duas listas vazias, uma para itens duplicados, outra 
+            para os links, realizamos a consulta GET, convertemos para UTF8 pois por padrão ele não aceita símbolos 
+            e cedilhas, filtra com Regular Expression procurando por links dentro de 'hrefs', com 'https://', 
+            contendo letras, traços, pontos e sublinhados.</p>
+          <p>O loop condicional vai filtrar cada link, checar se tem duplicados, dar juntar na lista dupe_list caso
+            tenha. a função link.split vai separar a string do link com "." como referência, ex: www.google.com -> 
+            "www" "google" "com", "[1]" no final vai selecionar apenas o elemento "google".</p>   
+          <p>Após realizar o filtro, chamamos o modelo Artigo e damos os argumentos para criar o objeto filtrado,
+            o modelo vai fazer isso para todos os links que foram validados no processo e salvar localmente.
+          </p>
+          <p>E finalmente, retornamos a função para a views.py, que vai chamar armazenar como contexto para 
+            o arquivo crawler.html, que foi configurado para imprimir cada elemento dentro do modelo Artigo 
+            que estiver disponível. Com Titulo, URL, botão de Editar e Deletar. Estilizei tudo com Bootstrap e CSS.
+          </p>   
+          <img width="900" height="506" src="https://i.imgur.com/CBy4WCY.jpg" alt="">
+          <br>
+          <p>- Gabriel de Christo Marques</p>       
+      </p>           
+    </div>
+  </div>
+</section>
 
 {% endblock content %}
