@@ -22,12 +22,14 @@
           <p>- Armazenar localmente</p> 
           <p>- Imprimir no browser</p> 
           <p>- Permitir funções para deletar ou editar manualmente o link e label</p>  
-          <p>- Disponibilizar uma API em formato JSON</p>       
+          <p>- Disponibilizar uma API em formato JSON.</p>       
           
           <p>Para realizar cada tarefa, utilizei a linguagem que mais domino no momento, Python 
             com o framework Django e Django Rest Framework. Também irei refazer em Javascript NodeJS, 
             linguagem que comecei a estudar recentemente em Agosto 2022, foi um ótimo exercício.</p>
-            <img width="900" height="506" src="https://www.shuup.com/wp-content/uploads/2017/12/python-plus-django-1.jpg" alt="">
+            <a href="https://docs.djangoproject.com/" target="_blank">
+              <img width="900" height="506" src="https://www.shuup.com/wp-content/uploads/2017/12/python-plus-django-1.jpg" alt="">
+            </a>
           <p>Comecei criando uma aplicação web simples em Django com 3 arquivos HTML: um para aceitar um 'texto', 
             'input edit' e botão para 'submit'. O de editar com 'input', 'cancelar' e 'submit', e cancelar com 
             'input delete' e 'cancelar'.</p>            
@@ -52,7 +54,10 @@
             o arquivo crawler.html, que foi configurado para imprimir cada elemento dentro do modelo Artigo 
             que estiver disponível. Com Titulo, URL, botão de Editar e Deletar. Estilizei tudo com Bootstrap e CSS.
           </p>   
-          <img width="900" height="506" src="https://i.imgur.com/CBy4WCY.jpg" alt="">
+          <a href="{% url 'crawler' %}" target="_blank">
+            <img width="900" height="506" src="https://i.imgur.com/CBy4WCY.jpg" alt="App Web Crawler">
+          </a>
+          
           <br>
           <p>- Gabriel de Christo Marques</p>       
       </p>           
